@@ -1,0 +1,1614 @@
+/* =========================================================
+   CARV3DSOUL PORTFOLIO
+   SPACE / CYBER THEME
+   ========================================================= */
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #eaffff;
+
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            #0a2033 0%,
+            #06121f 35%,
+            #020914 65%,
+            #000207 100%
+        );
+}
+
+
+/* =========================================================
+   SPACE BACKGROUND
+   ========================================================= */
+
+.space-background {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   STARS
+   ========================================================= */
+
+.stars {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ---------- STAR LAYER 1 ---------- */
+
+.stars-1 {
+    opacity: 0.8;
+
+    background-image:
+        radial-gradient(
+            circle,
+            #ffffff 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle,
+            #72eaff 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        83px 97px,
+        137px 121px;
+
+    background-position:
+        15px 30px,
+        70px 10px;
+
+    animation:
+        starsMove1
+        35s
+        linear
+        infinite;
+}
+
+
+/* ---------- STAR LAYER 2 ---------- */
+
+.stars-2 {
+    opacity: 0.45;
+
+    background-image:
+        radial-gradient(
+            circle,
+            #ffffff 1px,
+            transparent 1.5px
+        ),
+        radial-gradient(
+            circle,
+            #00d9ff 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        173px 151px,
+        227px 193px;
+
+    background-position:
+        90px 80px,
+        20px 120px;
+
+    animation:
+        starsMove2
+        55s
+        linear
+        infinite;
+}
+
+
+/* ---------- STAR LAYER 3 ---------- */
+
+.stars-3 {
+    opacity: 0.25;
+
+    background-image:
+        radial-gradient(
+            circle,
+            #8deaff 1px,
+            transparent 1.5px
+        );
+
+    background-size:
+        257px 223px;
+
+    background-position:
+        120px 50px;
+
+    animation:
+        starsMove3
+        90s
+        linear
+        infinite;
+}
+
+
+/* =========================================================
+   STAR ANIMATION
+   ========================================================= */
+
+@keyframes starsMove1 {
+
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(0, 40px, 0);
+    }
+}
+
+
+@keyframes starsMove2 {
+
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(-40px, 60px, 0);
+    }
+}
+
+
+@keyframes starsMove3 {
+
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: translate3d(30px, -50px, 0);
+    }
+}
+
+
+/* =========================================================
+   SCANLINES
+   ========================================================= */
+
+.scanlines {
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0.025) 0px,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+
+    opacity: 0.25;
+}
+
+
+/* =========================================================
+   SOLAR SYSTEM
+   ========================================================= */
+
+.solar-system {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 20px;
+    height: 20px;
+
+    transform:
+        translate(-50%, -50%);
+
+    z-index: 1;
+
+    opacity: 0.42;
+
+    filter:
+        drop-shadow(
+            0 0 15px
+            rgba(0, 220, 255, 0.12)
+        );
+}
+
+
+/* =========================================================
+   SUN
+   ========================================================= */
+
+.sun {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 72px;
+    height: 72px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle at 35% 35%,
+            #fffbd0 0%,
+            #fff176 18%,
+            #ffd83d 40%,
+            #ff9d00 68%,
+            #ff4d00 100%
+        );
+
+    box-shadow:
+        0 0 12px #ffb300,
+        0 0 30px rgba(255, 170, 0, 0.65),
+        0 0 65px rgba(255, 100, 0, 0.3);
+
+    animation:
+        sunPulse
+        3s
+        ease-in-out
+        infinite;
+
+    z-index: 10;
+}
+
+
+@keyframes sunPulse {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            scale(1.06);
+    }
+}
+
+
+/* =========================================================
+   ORBITS
+   ========================================================= */
+
+.orbit {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    border:
+        1px solid
+        rgba(0, 220, 255, 0.2);
+
+    border-radius: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    animation:
+        orbitRotation
+        linear
+        infinite;
+
+    transform-origin:
+        center center;
+}
+
+
+/* ---------- ORBIT 1 ---------- */
+
+.orbit-1 {
+    width: 120px;
+    height: 120px;
+
+    animation-duration: 6s;
+}
+
+
+/* ---------- ORBIT 2 ---------- */
+
+.orbit-2 {
+    width: 180px;
+    height: 180px;
+
+    animation-duration: 9s;
+}
+
+
+/* ---------- ORBIT 3 ---------- */
+
+.orbit-3 {
+    width: 250px;
+    height: 250px;
+
+    animation-duration: 12s;
+}
+
+
+/* ---------- ORBIT 4 ---------- */
+
+.orbit-4 {
+    width: 330px;
+    height: 330px;
+
+    animation-duration: 16s;
+}
+
+
+/* ---------- ORBIT 5 ---------- */
+
+.orbit-5 {
+    width: 430px;
+    height: 430px;
+
+    animation-duration: 22s;
+}
+
+
+/* ---------- ORBIT 6 ---------- */
+
+.orbit-6 {
+    width: 550px;
+    height: 550px;
+
+    animation-duration: 29s;
+}
+
+
+/* =========================================================
+   ORBIT ANIMATION
+   ========================================================= */
+
+@keyframes orbitRotation {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   PLANETS
+   ========================================================= */
+
+.planet {
+    position: absolute;
+
+    left: 50%;
+    top: -6px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 5px
+        rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   MERCURY
+   ========================================================= */
+
+.mercury {
+    width: 9px;
+    height: 9px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #d9d9d9,
+            #777,
+            #333
+        );
+}
+
+
+/* =========================================================
+   VENUS
+   ========================================================= */
+
+.venus {
+    width: 13px;
+    height: 13px;
+
+    background:
+        radial-gradient(
+            circle at 30% 30%,
+            #ffe7a0,
+            #e0aa54,
+            #8b5423
+        );
+}
+
+
+/* =========================================================
+   EARTH
+   ========================================================= */
+
+.earth {
+    width: 17px;
+    height: 17px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #8fffff 0%,
+            #27a9e8 30%,
+            #1765c0 55%,
+            #062b78 100%
+        );
+
+    box-shadow:
+        0 0 8px
+        rgba(0, 220, 255, 0.8),
+        0 0 14px
+        rgba(0, 180, 255, 0.25);
+}
+
+
+/* Earth land */
+
+.earth-light {
+    position: absolute;
+
+    width: 5px;
+    height: 3px;
+
+    left: 3px;
+    top: 4px;
+
+    background: #6dffbd;
+
+    border-radius: 2px;
+}
+
+
+/* =========================================================
+   MARS
+   ========================================================= */
+
+.mars {
+    width: 15px;
+    height: 15px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #ffae7d,
+            #d94e2e 60%,
+            #641c19 100%
+        );
+}
+
+
+/* =========================================================
+   JUPITER
+   ========================================================= */
+
+.jupiter {
+    width: 30px;
+    height: 30px;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #e9c7a0 0px,
+            #e9c7a0 4px,
+            #a87552 4px,
+            #a87552 7px,
+            #f1d5b1 7px,
+            #f1d5b1 11px
+        );
+
+    box-shadow:
+        inset -5px -4px 8px
+        rgba(50, 20, 10, 0.3);
+}
+
+
+/* =========================================================
+   SATURN PLANET
+   ========================================================= */
+
+.saturn {
+    width: 27px;
+    height: 27px;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #fff0ba,
+            #c7a76a 65%,
+            #856b3e 100%
+        );
+}
+
+
+/* =========================================================
+   SMALL SATURN RING
+   ========================================================= */
+
+.saturn .saturn-ring {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 52px;
+    height: 15px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-15deg);
+
+    border:
+        2px solid
+        rgba(220, 195, 145, 0.7);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 6px
+        rgba(255, 220, 160, 0.25);
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   BIG SATURN
+   ========================================================= */
+
+.big-saturn {
+    position: absolute;
+
+    left: 82%;
+    top: 70%;
+
+    width: 320px;
+    height: 320px;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+
+    opacity: 0.22;
+
+    z-index: 1;
+
+    animation:
+        bigSaturnFloat
+        8s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   BIG SATURN GLOW
+   ========================================================= */
+
+.saturn-glow {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 250px;
+    height: 250px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 190, 90, 0.08);
+
+    filter:
+        blur(35px);
+}
+
+
+/* =========================================================
+   BIG SATURN BODY
+   ========================================================= */
+
+.big-saturn .saturn-body {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 170px;
+    height: 170px;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background:
+        repeating-linear-gradient(
+            to bottom,
+            #d9b47a 0px,
+            #d9b47a 12px,
+
+            #a9784e 12px,
+            #a9784e 22px,
+
+            #e2c18c 22px,
+            #e2c18c 34px,
+
+            #9b704e 34px,
+            #9b704e 44px
+        );
+
+    box-shadow:
+        inset -25px -20px 35px
+        rgba(40, 20, 10, 0.5),
+
+        inset 15px 15px 30px
+        rgba(255, 240, 190, 0.2),
+
+        0 0 35px
+        rgba(220, 180, 100, 0.3);
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   BIG SATURN RING
+   ========================================================= */
+
+.big-saturn .saturn-ring {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 420px;
+    height: 120px;
+
+    transform:
+        translate(-50%, -50%)
+        rotate(-14deg);
+
+    border:
+        4px solid
+        rgba(200, 180, 130, 0.6);
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px
+        rgba(255, 220, 160, 0.2);
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   SATURN FLOAT
+   ========================================================= */
+
+@keyframes bigSaturnFloat {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            rotate(-2deg);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -55%)
+            rotate(2deg);
+    }
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 100;
+
+    background:
+        rgba(1, 8, 17, 0.78);
+
+    border-bottom:
+        1px solid
+        rgba(0, 220, 255, 0.2);
+
+    backdrop-filter:
+        blur(15px);
+
+    -webkit-backdrop-filter:
+        blur(15px);
+
+    box-shadow:
+        0 5px 30px
+        rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   NAVBAR INNER
+   ========================================================= */
+
+.navbar-inner {
+    width: 100%;
+
+    min-height: 60px;
+
+    padding:
+        0 60px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo {
+    color: #00eaff;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-decoration: none;
+
+    text-shadow:
+        0 0 10px
+        rgba(0, 234, 255, 0.6);
+}
+
+
+/* =========================================================
+   NAV LINKS
+   ========================================================= */
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 35px;
+
+    list-style: none;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #b9dce8;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    transition:
+        0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #00eaff;
+
+    text-shadow:
+        0 0 10px
+        rgba(0, 234, 255, 0.6);
+}
+
+
+/* NAV UNDERLINE */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -9px;
+
+    width: 0;
+    height: 2px;
+
+    background: #00eaff;
+
+    box-shadow:
+        0 0 8px
+        #00eaff;
+
+    transform:
+        translateX(-50%);
+
+    transition:
+        width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main {
+    position: relative;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        150px 10%
+        80px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 80px;
+
+    z-index: 10;
+}
+
+
+/* =========================================================
+   HERO TEXT
+   ========================================================= */
+
+.hero-text {
+    position: relative;
+
+    z-index: 20;
+
+    max-width: 650px;
+}
+
+
+/* =========================================================
+   TERMINAL LABEL
+   ========================================================= */
+
+.terminal-label {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: #00eaff;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   HERO TITLE
+   ========================================================= */
+
+.hero-text h1 {
+    color: #eaffff;
+
+    font-size:
+        clamp(40px, 5vw, 65px);
+
+    line-height: 1.1;
+
+    margin-bottom: 20px;
+}
+
+.hero-text h1 span {
+    color: #00eaff;
+
+    text-shadow:
+        0 0 10px
+        rgba(0, 234, 255, 0.7),
+
+        0 0 25px
+        rgba(0, 234, 255, 0.35);
+}
+
+
+/* =========================================================
+   HERO SUBTITLE
+   ========================================================= */
+
+.hero-text h2 {
+    min-height: 35px;
+
+    color: #00eaff;
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   HERO PARAGRAPH
+   ========================================================= */
+
+.hero-text p {
+    color: #b7cad5;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+.hero-text b {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   QUOTE
+   ========================================================= */
+
+.quote {
+    color: #7defff !important;
+
+    font-style: italic;
+
+    border-left:
+        2px solid
+        #00eaff;
+
+    padding-left: 15px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.buttons {
+    display: flex;
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding:
+        12px 24px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    transition:
+        0.3s ease;
+}
+
+
+/* PRIMARY */
+
+.btn.primary {
+    color: #001018;
+
+    background: #00eaff;
+
+    box-shadow:
+        0 0 15px
+        rgba(0, 234, 255, 0.35);
+}
+
+.btn.primary:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 0 25px
+        rgba(0, 234, 255, 0.65);
+}
+
+
+/* OUTLINE */
+
+.btn.outline {
+    color: #00eaff;
+
+    border:
+        1px solid
+        #00eaff;
+
+    background:
+        rgba(0, 234, 255, 0.05);
+}
+
+.btn.outline:hover {
+    background:
+        rgba(0, 234, 255, 0.12);
+
+    transform:
+        translateY(-3px);
+}
+
+
+/* =========================================================
+   HERO IMAGE
+   ========================================================= */
+
+.hero-img {
+    position: relative;
+
+    width: 330px;
+    height: 330px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 20;
+}
+
+
+/* IMAGE */
+
+.hero-img img {
+    position: relative;
+
+    width: 280px;
+    height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        3px solid
+        rgba(0, 234, 255, 0.8);
+
+    box-shadow:
+        0 0 20px
+        rgba(0, 234, 255, 0.35),
+
+        0 0 60px
+        rgba(0, 234, 255, 0.15);
+
+    z-index: 3;
+}
+
+
+/* AVATAR RING */
+
+.avatar-ring {
+    position: absolute;
+
+    width: 310px;
+    height: 310px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(0, 234, 255, 0.35);
+
+    animation:
+        avatarRotate
+        12s
+        linear
+        infinite;
+}
+
+
+@keyframes avatarRotate {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+}
+
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+
+.about {
+    position: relative;
+
+    z-index: 10;
+
+    min-height: 100vh;
+
+    padding:
+        120px 10%;
+}
+
+
+/* TITLE */
+
+.title {
+    text-align: center;
+
+    color: #eaffff;
+
+    font-size: 45px;
+
+    margin-bottom: 70px;
+
+    text-shadow:
+        0 0 15px
+        rgba(0, 234, 255, 0.2);
+}
+
+
+/* =========================================================
+   ABOUT CONTAINER
+   ========================================================= */
+
+.about-container {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 60px;
+
+    max-width: 1200px;
+
+    margin:
+        auto;
+}
+
+
+/* =========================================================
+   ABOUT TEXT
+   ========================================================= */
+
+.about-text h2 {
+    color: #00eaff;
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    color: #b7cad5;
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+.about-text span {
+    color: #00eaff;
+}
+
+
+/* =========================================================
+   FOCUS LIST
+   ========================================================= */
+
+.focus {
+    list-style: none;
+
+    margin:
+        20px 0;
+}
+
+.focus li {
+    color: #ccefff;
+
+    margin-bottom: 10px;
+}
+
+.focus li::before {
+    content: "▹";
+
+    color: #00eaff;
+
+    margin-right: 10px;
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.about-cards {
+    display: grid;
+
+    gap: 20px;
+}
+
+
+.card {
+    padding: 25px;
+
+    background:
+        rgba(3, 20, 35, 0.65);
+
+    border:
+        1px solid
+        rgba(0, 220, 255, 0.18);
+
+    border-radius: 12px;
+
+    backdrop-filter:
+        blur(8px);
+
+    -webkit-backdrop-filter:
+        blur(8px);
+
+    transition:
+        0.3s ease;
+}
+
+
+.card:hover {
+    transform:
+        translateY(-5px);
+
+    border-color:
+        rgba(0, 234, 255, 0.5);
+
+    box-shadow:
+        0 0 20px
+        rgba(0, 234, 255, 0.12);
+}
+
+
+.card h3 {
+    color: #00eaff;
+
+    margin-bottom: 12px;
+}
+
+
+.card p {
+    color: #eaffff;
+
+    margin-bottom: 8px;
+}
+
+
+.card span {
+    color: #7d9aa8;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   OTHER SECTIONS
+   ========================================================= */
+
+.section-page {
+    position: relative;
+
+    z-index: 10;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.section-page h1 {
+    color: #eaffff;
+
+    font-size:
+        clamp(40px, 6vw, 55px);
+
+    text-shadow:
+        0 0 15px
+        rgba(0, 234, 255, 0.4);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    /* NAVBAR */
+
+    .navbar-inner {
+        padding:
+            0 20px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        flex-direction: column;
+
+        justify-content: center;
+
+        text-align: center;
+
+        padding:
+            140px 25px
+            80px;
+
+        gap: 40px;
+    }
+
+
+    .hero-text {
+        max-width: 100%;
+    }
+
+
+    .buttons {
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    /* IMAGE */
+
+    .hero-img {
+        width: 280px;
+        height: 280px;
+    }
+
+
+    .hero-img img {
+        width: 230px;
+        height: 230px;
+    }
+
+
+    .avatar-ring {
+        width: 255px;
+        height: 255px;
+    }
+
+
+    /* ABOUT */
+
+    .about {
+        padding:
+            100px 25px;
+    }
+
+
+    .about-container {
+        grid-template-columns:
+            1fr;
+
+        gap: 35px;
+    }
+
+
+    /* SOLAR SYSTEM */
+
+    .solar-system {
+        transform:
+            translate(-50%, -50%)
+            scale(0.72);
+    }
+
+
+    /* BIG SATURN */
+
+    .big-saturn {
+        left: 85%;
+        top: 75%;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.7);
+
+        opacity: 0.14;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .navbar-inner {
+        min-height: 65px;
+
+        padding:
+            0 15px;
+    }
+
+
+    .logo {
+        font-size: 17px;
+    }
+
+
+    .nav-links {
+        gap: 10px;
+    }
+
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+
+    .hero-text h1 {
+        font-size: 38px;
+    }
+
+
+    .hero-text h2 {
+        font-size: 20px;
+    }
+
+
+    .hero-text p {
+        font-size: 15px;
+    }
+
+
+    .solar-system {
+        transform:
+            translate(-50%, -50%)
+            scale(0.55);
+    }
+
+
+    .big-saturn {
+        display: none;
+    }
+
+
+    .title {
+        font-size: 36px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+    }
+}
